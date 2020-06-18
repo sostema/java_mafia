@@ -4,6 +4,7 @@ import mai.Player;
 
 /**
  * Класс, представляющий игрока роли Доктор
+ *
  * @see Player
  */
 public class DoctorRole extends Player {
@@ -13,9 +14,10 @@ public class DoctorRole extends Player {
 
     /**
      * Позволяет доктору защитить персонажа от смерти Мафии
+     *
      * @see Player
      */
-    public void healPlayer(Player player){
+    public void healPlayer(Player player) {
         player.heal();
     }
 }

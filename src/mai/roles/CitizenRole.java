@@ -4,6 +4,7 @@ import mai.Player;
 
 /**
  * Класс, представляющий игрока роли Гражданин
+ *
  * @see Player
  */
 public class CitizenRole extends Player {

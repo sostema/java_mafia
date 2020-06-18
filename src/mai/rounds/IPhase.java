@@ -8,6 +8,7 @@ import mai.Player;
 public interface IPhase {
     /**
      * Реализация действий игроков
+     *
      * @param players Текущие игроки
      */
     void action(Player[] players);

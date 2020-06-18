@@ -4,6 +4,7 @@ import mai.Player;
 
 /**
  * Класс, представляющий игрока роли Детектив
+ *
  * @see Player
  */
 public class DetectiveRole extends Player {
@@ -13,9 +14,10 @@ public class DetectiveRole extends Player {
 
     /**
      * Проверка данного игрока на принадлежность к роли Мафия
+     *
      * @param player Игрок, которого проверяет детектив.
      */
-    public void checkPlayer(Player player){
+    public void checkPlayer(Player player) {
         boolean isPlayerMafia = (player instanceof MafiaRole);
     }
 }

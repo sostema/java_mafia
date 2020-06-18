@@ -4,6 +4,7 @@ import mai.Player;
 
 /**
  * Класс, представляющий игрока роли Мафия
+ *
  * @see Player
  */
 public class MafiaRole extends Player {
