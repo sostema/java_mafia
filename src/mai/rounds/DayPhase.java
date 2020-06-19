@@ -17,11 +17,11 @@ public class DayPhase implements IPhase {
     /**
      * Метод, который реализует фазу голосования персонажами
      *
-     * @param players Текущие игроки
+     * @param players - текущие игроки
      */
     private void votePhase(Player[] players) {
         for (Player p : players) {
-            Player chosenPlayer = p.getPlayer();
+            Player chosenPlayer = p.getPlayer(players);
             p.vote(chosenPlayer);
         }
     }
@@ -29,7 +29,7 @@ public class DayPhase implements IPhase {
     /**
      * Метод, который реализует фазу решения, кто умрёт в результате голосования
      *
-     * @param players Текущие игроки
+     * @param players - текущие игроки
      */
     private void checkVotes(Player[] players) {
         Player mostVotedPlayer = players[0];

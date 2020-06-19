@@ -19,12 +19,12 @@ public class NightPhase implements IPhase {
     /**
      * Метод, который реализует фазу голосования Мафией
      *
-     * @param players Текущие игроки
+     * @param players - текущие игроки
      */
     private void MafiaPhase(Player[] players) {
         for (Player p : players) {
             if (p instanceof MafiaRole) {
-                Player chosenPlayer = p.getPlayer();
+                Player chosenPlayer = p.getPlayer(players);
                 p.vote(chosenPlayer);
             }
         }
@@ -33,12 +33,12 @@ public class NightPhase implements IPhase {
     /**
      * Метод, который реализует фазу проверки игрока Детективом
      *
-     * @param players Текущие игроки
+     * @param players - текущие игроки
      */
     private void DetectivePhase(Player[] players) {
         for (Player p : players) {
             if (p instanceof DetectiveRole) {
-                Player chosenPlayer = p.getPlayer();
+                Player chosenPlayer = p.getPlayer(players);
                 ((DetectiveRole) p).checkPlayer(chosenPlayer);
             }
         }
@@ -52,7 +52,7 @@ public class NightPhase implements IPhase {
     private void DoctorPhase(Player[] players) {
         for (Player p : players) {
             if (p instanceof DoctorRole) {
-                Player chosenPlayer = p.getPlayer();
+                Player chosenPlayer = p.getPlayer(players);
                 ((DoctorRole) p).healPlayer(chosenPlayer);
             }
         }

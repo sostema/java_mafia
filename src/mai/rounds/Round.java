@@ -7,7 +7,13 @@ import mai.Player;
  * Класс, реализующий раунд
  */
 public class Round {
+    /**
+     * Поле ночной фазы
+     */
     private final NightPhase nightPhase;
+    /**
+     * Поле дневной фазы
+     */
     private final DayPhase dayPhase;
 
     public Round() {
@@ -20,6 +26,7 @@ public class Round {
      * и проверка текущего игрового состояния
      *
      * @param players Текущие игроки
+     * @return текущее состояние игры
      */
     public GameState playRound(Player[] players) {
         this.nightPhase.action(players);
@@ -36,8 +43,8 @@ public class Round {
     /**
      * Метод, проверяющий текущее состояние игры
      *
-     * @param players Текущие игроки
-     * @return Текущее состояние игры
+     * @param players - текущие игроки
+     * @return текущее состояние игры
      */
     private GameState checkGameState(Player[] players) {
         return GameState.MAFIA_WIN;

@@ -11,13 +11,26 @@ import mai.rounds.Round;
  */
 public class GameController {
 
+    /**
+     * Поле раунда, котоорый используется
+     */
     private Round round;
     private Player[] players;
 
+
+    /**
+     * Конструктор, инициализирующий раунд и игроков самостоятельно
+     */
     public GameController() {
         this.initializeGame();
     }
 
+    /**
+     * Конструктор, принимающий заранее созданные раунд и игроков
+     *
+     * @param players - массив заранее созданных игроков
+     * @param round   - заранее созданый экземпляр раунда
+     */
     public GameController(Player[] players, Round round) {
         this.round = round;
         this.players = players;
@@ -29,7 +42,9 @@ public class GameController {
     }
 
     /**
-     * Метод, инициализурющий игроков и раунд (на случай, если
+     * Метод, инициализурющий раунд и игроков (если не предоставлены в конструкторе
+     *
+     * @see GameController#GameController()
      */
     private void initializeGame() {
         this.round = new Round();
@@ -52,7 +67,7 @@ public class GameController {
     /**
      * Метод, в котором реализуется конец игры
      *
-     * @param gameState Состояние игры (MAFIA_WIN или CITIZEN_WIN)
+     * @param gameState - cостояние игры (MAFIA_WIN или CITIZEN_WIN)
      */
     private void endGame(GameState gameState) {
         if (gameState == GameState.MAFIA_WIN) {

@@ -15,6 +15,7 @@ public class DoctorRole extends Player {
     /**
      * Позволяет доктору защитить персонажа от смерти Мафии
      *
+     * @param player - игрок, которого защищает Доктор
      * @see Player
      */
     public void healPlayer(Player player) {

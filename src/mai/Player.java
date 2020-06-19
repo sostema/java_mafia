@@ -9,6 +9,12 @@ public abstract class Player {
     private boolean isShielded;
     private int votes = 0;
 
+
+    /**
+     * Конструктор, создающий игрока (используется в наследуемых классах)
+     *
+     * @param name - имя игрока
+     */
     public Player(String name) {
         this.isAlive = true;
         this.isShielded = false;
@@ -35,6 +41,8 @@ public abstract class Player {
 
     /**
      * Свойство, возвращяющее состояние игрока
+     *
+     * @return состояние игрока, жив он или нет
      */
     public boolean getStatus() {
         return isAlive;
@@ -42,6 +50,8 @@ public abstract class Player {
 
     /**
      * Свойство, возвращяющее текущие голоса за персонажа
+     *
+     * @return количество голосов за игрока
      */
     public int getVotes() {
         return votes;
@@ -50,10 +60,10 @@ public abstract class Player {
     /**
      * Метод, который вызывется при голосовании
      *
-     * @param vote Игрок, за которого проголосовали
+     * @param votedPlayer - игрок, за которого проголосовали
      */
-    public void vote(Player vote) {
-        vote.votes++;
+    public void vote(Player votedPlayer) {
+        votedPlayer.votes++;
     }
 
     /**
@@ -66,11 +76,12 @@ public abstract class Player {
     }
 
     /**
-     * Метод, возвращающий игрока
+     * Метод, возвращающий игрока из списка
      *
-     * @return Выбранного игрока
+     * @param players - текщущие игроки, из которых выбираем
+     * @return выбранный игрок из списка
      */
-    public Player getPlayer() {
-        return this;
+    public Player getPlayer(Player[] players) {
+        return players[0];
     }
 }
